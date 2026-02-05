@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: "Arial", sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         .card {
@@ -20,16 +20,8 @@
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            width: 350px;
+            width: 360px;
             position: relative;
-        }
-
-        .author {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 14px;
-            color: #888;
         }
 
         h1 {
@@ -39,7 +31,7 @@
 
         .buttons {
             position: relative;
-            height: 100px;
+            height: 120px;
         }
 
         button {
@@ -59,8 +51,8 @@
             background: #f44336;
             color: white;
             position: absolute;
-            left: 150px;
-            top: 40px;
+            left: 180px;
+            top: 50px;
         }
 
         #message {
@@ -69,13 +61,17 @@
             color: #e91e63;
             font-weight: bold;
         }
+
+        #author {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #777;
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="author">— Saoud</div>
-
     <h1>Veux-tu me faire un câlin ? 🤗</h1>
 
     <div class="buttons">
@@ -84,24 +80,37 @@
     </div>
 
     <div id="message"></div>
+    <div id="author"></div>
 </div>
 
 <script>
     const noBtn = document.getElementById("no");
     const yesBtn = document.getElementById("yes");
     const message = document.getElementById("message");
+    const author = document.getElementById("author");
 
-    noBtn.addEventListener("mouseover", () => {
-        const x = Math.random() * 250;
-        const y = Math.random() * 70;
+    function moveNoButton() {
+        const x = Math.random() * 260;
+        const y = Math.random() * 90;
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
+    }
+
+    // Bouton rouge très rapide 😈
+    noBtn.addEventListener("mouseover", moveNoButton);
+    document.addEventListener("mousemove", moveNoButton);
+
+    noBtn.addEventListener("click", () => {
+        message.textContent = "Toujours méchante envers moi 😔";
+        author.textContent = "";
     });
 
     yesBtn.addEventListener("click", () => {
         message.textContent = "Tu es adorable princesse 💖";
+        author.textContent = "— Saoud";
     });
 </script>
 
 </body>
 </html>
+
