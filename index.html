@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Câlin 💕</title>
+    <title>Link </title>
     <style>
         body {
             margin: 0;
@@ -72,7 +72,7 @@
 <body>
 
 <div class="card">
-    <h1>Veux-tu me faire un câlin ? 🤗</h1>
+    <h1>Veux-tu être ma femme ? 🤗</h1>
 
     <div class="buttons">
         <button id="yes">Oui 💚</button>
@@ -90,8 +90,8 @@
     const author = document.getElementById("author");
 
     function moveNoButton() {
-        const x = Math.random() * 260;
-        const y = Math.random() * 90;
+        const x = Math.random() * 300;
+        const y = Math.random() * 100;
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
     }
@@ -101,16 +101,15 @@
     document.addEventListener("mousemove", moveNoButton);
 
     noBtn.addEventListener("click", () => {
-        message.textContent = "Toujours méchante envers moi 😔";
+        message.textContent = "Retourne cliquer sur Oui grosse tête 😔";
         author.textContent = "";
     });
 
     yesBtn.addEventListener("click", () => {
-        message.textContent = "Tu es adorable princesse 💖";
-        author.textContent = "— Saoud";
+        message.textContent = "Je t'aime de tout mon coeur ma princesse 💖";
+        author.textContent = "Saoud";
     });
 </script>
 
 </body>
 </html>
-
